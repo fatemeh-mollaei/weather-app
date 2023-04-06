@@ -1,0 +1,270 @@
+* {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+@font-face {
+  font-family: shabnam;
+  src: url(./assets/font/Shabnam.eot) format(eot);
+  src: url(./assets/font/Shabnam.ttf) format(ttf);
+  src: url(./assets/font/Shabnam.woff) format(woff);
+}
+body {
+  background-color: #005c6a;
+}
+.background {
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  z-index: -1000;
+  opacity: 0.4;
+}
+.weather-app {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 1000;
+}
+.top-weather-app {
+  display: flex;
+  justify-content: center;
+}
+.search-box {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+.search-bar {
+  width: 80%;
+  padding: 10px;
+  font-family: shabnam;
+  border: black 3px solid;
+  border-radius: 10px;
+}
+.search-submit {
+  width: 15%;
+  font-family: shabnam;
+  background-color: #28c0c0;
+  border: black 3px solid;
+  border-radius: 10px;
+  position: relative;
+}
+.search-submit__loading .search-submit__text {
+  visibility: hidden;
+}
+.search-submit__loading::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 0.25rem solid transparent;
+  border-top-color: white;
+  border-right-color: white;
+  border-bottom-color: white;
+  border-radius: 50%;
+  animation: search-submit-loading-spinner 2s alternate infinite;
+}
+@keyframes search-submit-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(3turn);
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.temp-card-city {
+  width: 13%;
+  height: 17rem;
+  padding: 20px;
+  background-color: #28c0c0d0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: black 3px solid;
+  box-shadow: 7px 7px rgb(31, 27, 27);
+  position: relative;
+}
+.city {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+}
+.weather-icon {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+.desc {
+  color: white;
+}
+.date {
+  color: white;
+}
+.clock {
+  margin-top: 5px;
+  color: white;
+}
+.temp {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.container__additional-info {
+  width: 85%;
+  height: 20rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0.8;
+}
+.addition-info {
+  background-color: white;
+  width: 13%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-radius: 20px;
+  border: black 3px solid;
+  position: relative;
+  animation: animation-addition-info 2s infinite alternate;
+}
+@keyframes animation-addition-info {
+  from {
+    top: 30px;
+  }
+  to {
+    top: 0px;
+  }
+}
+.addition-info div {
+  width: 100%;
+  text-align: center;
+  font-family: shabnam;
+  margin-top: 10px;
+}
+.addition-info div p {
+  font-weight: bold;
+  direction: ltr;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+.addition-icon {
+  width: 90px;
+  height: 90px;
+}
+.footer {
+  width: 100%;
+  min-height: 50px;
+}
+.swal-overlay {
+  background-color: rgba(171, 71, 71, 0.7);
+  font-family: shabnam;
+}
+@media (max-width: 1000px) and (min-width: 500px) {
+  .search-box {
+    width: 50%;
+    height: 2.5rem;
+  }
+  .search-bar {
+    width: 78%;
+  }
+  .temp-card-city {
+    width: 20%;
+    height: 15rem;
+  }
+  .city {
+    top: 47%;
+  }
+  .temp {
+    font-size: 3rem;
+  }
+  .city span {
+    font-size: 0.8rem;
+  }
+  .container__additional-info {
+    height: 13rem;
+  }
+  .addition-info {
+    margin-top: 80px;
+  }
+  .addition-info div {
+    font-size: 0.8rem;
+  }
+  .addition-info div p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .search-box {
+    width: 65%;
+    height: 2.5rem;
+  }
+  .search-bar {
+    width: 65%;
+    border: 2px black solid;
+  }
+  .search-submit {
+    width: 35%;
+    margin-right: 5px;
+    border: 2px black solid;
+  }
+  .temp-card-city {
+    width: 40%;
+    height: 15rem;
+  }
+  .city {
+    top: 50%;
+  }
+  .temp {
+    font-size: 2rem;
+    margin: 5px 0;
+  }
+  .container__additional-info {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .addition-info {
+    width: 30%;
+    height: 8rem;
+    margin-top: 30px;
+  }
+  .addition-icon {
+    width: 70px;
+    height: 70px;
+  }
+  .addition-info div {
+    font-size: 0.7rem;
+  }
+  .addition-info div p {
+    font-size: 0.8rem;
+  }
+  @keyframes animation-addition-info {
+    from {
+      top: 15px;
+    }
+    to {
+      top: 0px;
+    }
+  }
+  .footer {
+    height: 80px;
+  }
+}
